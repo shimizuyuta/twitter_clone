@@ -1,0 +1,19 @@
+<% if users.any? %>
+  <ul class="list-unstyled">
+    <% users.each do |user| %>
+      <% id = user.user_id %>
+        <li class ='media mb-3'>
+        <% name = User.find(id)%>
+        <div> <%= name.name %>：</div>
+        
+        <div>
+        <p class ='mb-0'>
+        <%= user.content %>
+        </p>
+        </div>
+        </li>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+

@@ -1,0 +1,16 @@
+       
+   <div>
+   <% if current_user.favorited_by?(micropost) %>
+     <%= form_with(model: current_user.favorites.find_by(micropost_id: micropost.id), local: true, method: :delete) do |f| %>
+       <%= hidden_field_tag :micropost_id, micropost.id %>
+       <%= f.submit 'fav', class: 'btn btn-danger btn-block' %>
+     <% end %>
+    <% else %>
+       <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
+           <%= hidden_field_tag :current_id, current.id %>
+           <%= f.submit 'Follow', class: 'btn btn-primary btn-block' %>
+         <% end %>
+     <% end %>
+   </div>
+        <%= link_to 'dis', micropost_favorites_path, method: :post %>
+        <%= link_to 'fav', micropost_favorite_path(micr), method: :delete %>
