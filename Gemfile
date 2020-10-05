@@ -30,6 +30,13 @@ gem 'bcrypt', '~> 3.1.16'
 # paramsの中身確認のためのgem
 gem 'pry-rails'
 
+#画像処理
+gem 'carrierwave'
+
+#画像加工
+gem 'rmagick'
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
