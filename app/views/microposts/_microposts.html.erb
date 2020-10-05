@@ -3,6 +3,13 @@
     <li class="media mb-3">
       <img class="mr-2 rounded" src="<%= gravatar_url(micropost.user, { size: 50 }) %>" alt="">
       <div class="media-body">
+      <div class ='form-group'>
+      
+      <%= image_tag micropost.avatar.url(:thumb) if micropost.avatar? %>
+      
+
+       </div>
+
         <div>
           <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">posted at <%= micropost.created_at %></span>
         </div>

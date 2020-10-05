@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :fav_microposts, through: :favorites, source: :micropost
 
+
    
 
   def favorited_by?(micropost)
